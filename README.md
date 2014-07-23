@@ -1,8 +1,14 @@
 Unescape
 ========
 
-Scripts for unshortening urls and removing tracking query strings from hyperlinks
+Scripts for unshortening urls and removing tracking query strings from hyperlinks.
 
+* For several sites (Google, Youtube, Facebook, Twitter, etc.) which attempt to redirect the user through a second server, the scripts largely remove those redirects.
+* For link shorteners (especially Bitly) for which I have located an API that can unshorten public links (e.g. links created by others), the scripts unshorten those links.
+* For links which include tracking arguments (e.g. utm_XXX), the scripts remove those arguments.
+* For elements with one of several "data-XXXXX" attributes (e.g. 'data-track' on some websites), the scripts remove those attributes.
+
+The specific domains, arguments, and data come from urls to which I have seen links. Consequently, the script may miss a lot, but for my daily internet usage they cover most sites and links which I encounter.
 
 Installation
 ============
