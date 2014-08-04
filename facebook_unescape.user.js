@@ -4,7 +4,7 @@
 // @description    Strips outgoing redirects and URL parameters from links and dereferences shortlinks
 // @downloadURL    
 // @updateURL      
-// @version        1.8.80
+// @version        1.8.86
 // @match          *://*.facebook.com/*
 // ==/UserScript==
 console.log("Unescaping "+ document.location.href)
@@ -21,9 +21,9 @@ var GetDomain = function(Url){
 var fragCheck = function(fragment) {
     excl=['fb_','utm_','action_','WT.','hc_location','hpw','notif_','pf_rd_','bicm','refer']
     excl_exact=['hp','fblinkge0']
-    excl_key=['c','cx','cof','CST','wpisrc','ref','rref','eid','smid','mod','xrs','nclick_check','keywords','sr','_r','BAN',
-          'sc','cc','ei','directed_target_id','sa','igref','trk','source','product','src','soc_src','dom', 'google_editors_picks',
-          'emc','aref','medium','bcode','n_m','lloc','fref','usg','sntz','contentCollection','module','intcmp','iref',
+    excl_key=['c','cx','cof','CST','wpisrc','ref','rref','smid','mod','xrs','nclick_check','keywords','sr','_r','BAN','trackback',
+          'sc','cc','ei','directed_target_id','sa','igref','trk','source','src','soc_src','dom', 'google_editors_picks','ex_cid',
+          'emc','aref','medium','bcode','n_m','lloc','fref','usg','sntz','contentCollection','module','intcmp','iref', 'mabReward',
           'viewer_id','region','pgtype','campaign','_php','_type','hc_location','stream_ref','linkCode', 'socfid', 'socpid',
           'wprss','camp','creative', 'source_newsfeed_story_type','pldnSite','spref','wpsrc','version','mag','click','kw','link']
     for (i in excl) {

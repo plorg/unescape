@@ -4,7 +4,7 @@
 // @description    Resolves shortlinks and removes tracking args
 // @downloadURL    
 // @updateURL      
-// @version        1.8.80
+// @version        1.8.86
 // @include        *://*.*
 // @exclude        *://bitly.com/*
 // @exclude        *://*.duckduckgo.com/*
@@ -42,9 +42,9 @@ var GetDomain = function(Url){
 var fragCheck = function(fragment) {
     excl=['fb_','utm_','action_','WT.','hc_location','hpw','notif_','pf_rd_','bicm','refer']
     excl_exact=['hp','fblinkge0']
-    excl_key=['c','cx','cof','CST','wpisrc','ref','rref','eid','smid','mod','xrs','nclick_check','keywords','sr','_r','BAN',
-          'sc','cc','ei','directed_target_id','sa','igref','trk','source','product','src','soc_src','dom', 'google_editors_picks',
-          'emc','aref','medium','bcode','n_m','lloc','fref','usg','sntz','contentCollection','module','intcmp','iref',
+    excl_key=['c','cx','cof','CST','wpisrc','ref','rref','smid','mod','xrs','nclick_check','keywords','sr','_r','BAN','trackback',
+          'sc','cc','ei','directed_target_id','sa','igref','trk','source','src','soc_src','dom', 'google_editors_picks','ex_cid',
+          'emc','aref','medium','bcode','n_m','lloc','fref','usg','sntz','contentCollection','module','intcmp','iref', 'mabReward',
           'viewer_id','region','pgtype','campaign','_php','_type','hc_location','stream_ref','linkCode', 'socfid', 'socpid',
           'wprss','camp','creative', 'source_newsfeed_story_type','pldnSite','spref','wpsrc','version','mag','click','kw','link']
     for (i in excl) {
@@ -224,7 +224,7 @@ var FBUnescape = function(target){
                     'data-beacon-action','data-cb-ad-id','data-cb-dfp-id','ping',
                     'data-parsely-site', 'data-ga-target','data-ad-slot','data-ad-client',
                     'track','track_load','track_mousedown','data-async-context','data-href',
-                    'data-hveid','data-jiis', 'data-jibp','jsaction','data-ved']
+                    'data-hveid','data-jiis', 'data-jibp','data-ved']
                 for (var jj=0;jj<bb.length;jj++) {
                     aa=target.relatedNode.querySelectorAll('['+bb[jj]+']')
                     for (var ii=0;ii<aa.length;ii++) {
